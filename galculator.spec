@@ -10,7 +10,6 @@ Source: http://prdownloads.sourceforge.net/galculator/%{name}-%{version}.tar.bz2
 Source1: gcalc-icons.tar.bz2
 URL: http://galculator.sourceforge.net/ 
 Group: Office 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot 
 License: GPL
 BuildRequires: libglade2.0-devel
 BuildRequires: desktop-file-utils
