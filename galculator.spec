@@ -7,14 +7,12 @@ Summary: Galculator is a GTK 2 based calculator
 Version: %{version}
 Release: %{release}
 Source: http://prdownloads.sourceforge.net/galculator/%{name}-%{version}.tar.bz2
-Source1: gcalc-icons.tar.bz2
 Patch0: galculator-1.3.1-fix-desktop.patch
 URL: http://galculator.sourceforge.net/
 Group: Office
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot 
 License: GPLv2+
 BuildRequires: libglade2.0-devel
-BuildRequires: desktop-file-utils
 
 %description
 Galculator is a calculator that features two user modes: basic and
@@ -23,17 +21,15 @@ Only the most important operations and functions are available in
 algebraic mode as well as in Reverse Polish Mode.
 
 %prep 
-rm -rf $RPM_BUILD_ROOT
-
 %setup -q
 %patch0 -p0
-tar xjf %{SOURCE1}
 
 %build 
 %configure2_5x 
 %make
 
-%install 
+%install
+rm -fr %buildroot 
 %makeinstall_std
 
 mkdir -p %buildroot/{%_iconsdir,%_miconsdir,%_liconsdir}
@@ -42,6 +38,7 @@ convert -resize 32x16 pixmaps/galculator_48x48.png %buildroot%_iconsdir/%name.pn
 cp pixmaps/galculator_48x48.png %buildroot%_liconsdir/%name.png
 
 %find_lang  %{name}
+
 %clean 
 rm -rf $RPM_BUILD_ROOT
 
