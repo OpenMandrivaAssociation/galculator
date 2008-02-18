@@ -3,7 +3,7 @@
 %define release %mkrel 1
 
 Name: %{name}
-Summary: Galculator is a GTK 2 based calculator
+Summary: GTK 2 based calculator
 Version: %{version}
 Release: %{release}
 Source: http://prdownloads.sourceforge.net/galculator/%{name}-%{version}.tar.bz2
