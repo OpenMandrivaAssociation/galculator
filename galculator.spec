@@ -13,7 +13,7 @@ Group: Office
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot 
 License: GPLv2+
 BuildRequires: libglade2.0-devel
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 
 %description
 Galculator is a calculator that features two user modes: basic and
