@@ -1,13 +1,13 @@
 %define name galculator 
-%define version 1.3.1
-%define release %mkrel 4
+%define version 1.3.2
+%define release %mkrel 1
 
 Name: %{name}
 Summary: GTK 2 based calculator
 Version: %{version}
 Release: %{release}
 Source: http://prdownloads.sourceforge.net/galculator/%{name}-%{version}.tar.bz2
-Patch0: galculator-1.3.1-fix-desktop.patch
+Patch0: galculator-1.3.2-fix-desktop.patch
 URL: http://galculator.sourceforge.net/
 Group: Office
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot 
@@ -53,4 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_miconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_liconsdir}/%name.png
-%{_datadir}/pixmaps/galculator
+%{_datadir}/pixmaps/*
