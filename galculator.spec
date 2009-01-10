@@ -13,6 +13,7 @@ Group: Office
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot 
 License: GPLv2+
 BuildRequires: libglade2.0-devel
+BuildRequires: intltool
 BuildRequires: imagemagick
 
 %description
