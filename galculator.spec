@@ -7,7 +7,6 @@ Summary: GTK 2 based calculator
 Version: %{version}
 Release: %{release}
 Source: http://prdownloads.sourceforge.net/galculator/%{name}-%{version}.tar.bz2
-Patch0: galculator-1.3.2-fix-desktop.patch
 URL: http://galculator.sourceforge.net/
 Group: Office
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot 
@@ -15,6 +14,7 @@ License: GPLv2+
 BuildRequires: libglade2.0-devel
 BuildRequires: intltool
 BuildRequires: imagemagick
+BuildRequires: desktop-file-utils
 
 %description
 Galculator is a calculator that features two user modes: basic and
@@ -24,7 +24,6 @@ algebraic mode as well as in Reverse Polish Mode.
 
 %prep 
 %setup -q
-%patch0 -p0
 
 %build 
 %configure2_5x 
@@ -38,6 +37,11 @@ mkdir -p %buildroot/{%_iconsdir,%_miconsdir,%_liconsdir}
 convert -resize 16x16 pixmaps/galculator_48x48.png %buildroot%_miconsdir/%name.png
 convert -resize 32x16 pixmaps/galculator_48x48.png %buildroot%_iconsdir/%name.png
 cp pixmaps/galculator_48x48.png %buildroot%_liconsdir/%name.png
+
+desktop-file-install --vendor='' \
+	--dir=%buildroot%_datadir/applications \
+	--add-category='Calculator;GTK;GNOME' \
+	%buildroot%_datadir/applications/*.desktop
 
 %find_lang  %{name}
 
