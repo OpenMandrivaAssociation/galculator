@@ -7,7 +7,7 @@ Summary: GTK 2 based calculator
 Version: %{version}
 Release: %{release}
 Source: http://prdownloads.sourceforge.net/galculator/%{name}-%{version}.tar.bz2
-URL: http://galculator.sourceforge.net/
+URL: https://galculator.sourceforge.net/
 Group: Office
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot 
 License: GPLv2+
